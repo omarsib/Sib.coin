@@ -75,12 +75,6 @@
     .section-label { color: #b07b20; font-size: 0.9rem; font-weight: 700; text-align: center; display: block; margin-bottom: 10px; }
     .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 50px; color: #fcd34d; font-weight: 900; }
 
-    /* ABOUT BOX */
-    .about-box {
-      background: linear-gradient(135deg, #121020, #1a1430);
-      border: 1px solid #2e2050; padding: 50px; border-radius: 30px; text-align: center;
-    }
-
     /* COMMANDS GRID */
     .cmd-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px;
@@ -88,9 +82,8 @@
 
     .cmd-item {
       background: #0e0c1a; padding: 20px; border-radius: 15px;
-      display: flex; align-items: center; gap: 15px; border: 1px solid #1e1a30; transition: 0.3s;
+      display: flex; align-items: center; gap: 15px; border: 1px solid #1e1a30;
     }
-    .cmd-item:hover { border-color: #fcd34d40; }
 
     .cmd-icon { font-size: 1.8rem; }
     .cmd-text .name { color: #fcd34d; font-weight: 900; display: block; font-size: 1.1rem; }
@@ -105,8 +98,6 @@
       background: #0e0c1a; border: 1px solid #1e1a30; padding: 40px 30px; border-radius: 25px;
       text-align: center; transition: 0.3s; position: relative;
     }
-    .shop-card:hover { transform: translateY(-5px); border-color: #fcd34d40; }
-
     .shop-card.mythic { border: 2px solid #ef4444; background: linear-gradient(180deg, #1a0a0a 0%, #0e0c1a 100%); }
     .shop-card.legendary { border: 2px solid #a855f7; background: linear-gradient(180deg, #120a1a 0%, #0e0c1a 100%); }
     .shop-card.rare { border: 2px solid #f59e0b; }
@@ -118,6 +109,73 @@
 
     .price { font-size: 2.5rem; color: #4ade80; font-weight: 900; margin: 15px 0; }
     .price span { font-size: 1rem; color: #4a9c6a; }
+
+    /* --- COMMENTS SECTION --- */
+    .comments-container {
+        background: #0e0c1a;
+        border: 1px solid #1e1a30;
+        border-radius: 25px;
+        padding: clamp(20px, 5vw, 40px);
+        margin-top: 40px;
+    }
+
+    .comment-input-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 40px;
+    }
+
+    textarea {
+        background: #161225;
+        border: 1px solid #2e2050;
+        border-radius: 15px;
+        padding: 15px;
+        color: white;
+        font-family: 'Cairo';
+        resize: none;
+        min-height: 100px;
+        outline: none;
+        transition: 0.3s;
+    }
+
+    textarea:focus { border-color: #fcd34d; }
+
+    .btn-comment {
+        align-self: flex-start;
+        background: #f59e0b;
+        color: #000;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-weight: 900;
+        cursor: pointer;
+        font-family: 'Cairo';
+        transition: 0.3s;
+    }
+
+    .btn-comment:hover { transform: scale(1.05); background: #fbbf24; }
+
+    .comment-item {
+        border-bottom: 1px solid #1e1a30;
+        padding: 20px 0;
+        display: flex;
+        gap: 15px;
+    }
+
+    .comment-avatar {
+        width: 45px;
+        height: 45px;
+        background: #2a1a50;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
+
+    .comment-content .user-name { color: #fcd34d; font-weight: 700; font-size: 0.95rem; margin-bottom: 5px; display: block; }
+    .comment-content .text { color: #a094b8; font-size: 0.9rem; line-height: 1.6; }
 
     footer {
       padding: 60px 24px; text-align: center; background: #040309; border-top: 1px solid #1e1a30;
@@ -139,24 +197,9 @@
     </div>
   </section>
 
-  <section id="about">
-    <span class="section-label">المجتمع</span>
-    <h2 class="section-title">حول Art Heaven</h2>
-    <div class="about-box">
-      <p style="margin-bottom: 30px; color: #9d90b8; font-size: 1.1rem; line-height: 1.8;">
-        نحن أكبر تجمع عربي للمبدعين والرسامين على ديسكورد. نسعى لتوفير بيئة ملهمة تجمع بين الفن والتقنية، 
-        حيث يمكنك مشاركة أعمالك وتطوير مهاراتك مع نخبة من الفنانين.
-      </p>
-      <a href="https://discord.gg/cxccGZY9U5" target="_blank" 
-         style="background: #5865F2; color: white; padding: 14px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block;">
-         انضم إلينا على Discord
-      </a>
-    </div>
-  </section>
-
   <section id="commands" style="background: #0a0916;">
     <span class="section-label">التحكم</span>
-    <h2 class="section-title">أوامر البوت الأساسية</h2>
+    <h2 class="section-title">أوامر البوت</h2>
     <div class="cmd-grid">
       <div class="cmd-item">
         <span class="cmd-icon">💰</span>
@@ -164,31 +207,15 @@
       </div>
       <div class="cmd-item">
         <span class="cmd-icon">🎁</span>
-        <div class="cmd-text"><span class="name">!هدية</span><span class="desc">لاستلام المكافأة اليومية</span></div>
+        <div class="cmd-text"><span class="name">!هدية</span><span class="desc">المكافأة اليومية</span></div>
       </div>
       <div class="cmd-item">
         <span class="cmd-icon">💸</span>
-        <div class="cmd-text"><span class="name">!تحويل @اسم المبلغ</span><span class="desc">تحويل العملات للأعضاء</span></div>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-icon">🆔</span>
-        <div class="cmd-text"><span class="name">!id</span><span class="desc">عرض هويتك ومعلوماتك</span></div>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-icon">🎒</span>
-        <div class="cmd-text"><span class="name">!bag</span><span class="desc">حقيبة الممتلكات والشظايا</span></div>
+        <div class="cmd-text"><span class="name">!تحويل</span><span class="desc">تحويل العملات للأعضاء</span></div>
       </div>
       <div class="cmd-item">
         <span class="cmd-icon">🛒</span>
         <div class="cmd-text"><span class="name">!السوق</span><span class="desc">سوق بيع وشراء الشظايا</span></div>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-icon">💎</span>
-        <div class="cmd-text"><span class="name">!بيع_شظية [ع] [س]</span><span class="desc">عرض شظاياك للبيع بالسوق</span></div>
-      </div>
-      <div class="cmd-item">
-        <span class="cmd-icon">🏆</span>
-        <div class="cmd-text"><span class="name">!توب</span><span class="desc">قائمة أغنى الفنانين</span></div>
       </div>
     </div>
   </section>
@@ -197,46 +224,61 @@
     <span class="section-label">المتجر الحصري</span>
     <h2 class="section-title">متجر الرتب والنوادر</h2>
 
-    <p style="text-align: center; color: #a855f7; margin-bottom: 25px; font-weight: 700;">⬥ رتب دائمة (متوفرة دائماً) ⬥</p>
     <div class="shop-grid" style="margin-bottom: 60px;">
       <div class="shop-card mythic">
         <h3 style="color: #ef4444;">Mythic Artist</h3>
         <div class="price">4,000 <span>Sib</span></div>
-        <p style="font-size: 0.9rem; color: #b8a6a6;">رتبة أسطورية دائمة: لون أحمر متوهج ومزايا خاصة بالسيرفر.</p>
+        <p style="font-size: 0.9rem; color: #b8a6a6;">رتبة أسطورية دائمة: لون أحمر متوهج.</p>
       </div>
       <div class="shop-card legendary">
         <h3 style="color: #a855f7;">Legendary Creator</h3>
         <div class="price">3,000 <span>Sib</span></div>
-        <p style="font-size: 0.9rem; color: #a698b8;">رتبة خالدة دائمة: لون بنفسجي ومضاعفة مكافآت التفاعل.</p>
+        <p style="font-size: 0.9rem; color: #a698b8;">رتبة خالدة دائمة: لون بنفسجي.</p>
       </div>
     </div>
 
-    <p style="text-align: center; color: #f59e0b; margin-bottom: 25px; font-weight: 700;">⬥ نوادر المتجر (تظهر وتختفي عشوائياً) ⬥</p>
     <div class="shop-grid">
       <div class="shop-card rare">
         <span class="badge-rare">نادرة الظهور</span>
         <h3 style="color: #e8d5a0;">Void Painter</h3>
         <div class="price">10,000 <span>Sib</span></div>
-        <p style="font-size: 0.9rem; color: #7a708f;">ترفع الهدية اليومية إلى 150 نقطة بدلًا من 50.</p>
+        <p style="font-size: 0.9rem; color: #7a708f;">ترفع الهدية اليومية إلى 150 نقطة.</p>
       </div>
-      <div class="shop-card rare">
-        <span class="badge-rare">نادرة الظهور</span>
-        <h3 style="color: #fcd34d;">Celestial Artist</h3>
-        <div class="price">15,000 <span>Sib</span></div>
-        <p style="font-size: 0.9rem; color: #7a708f;">ترفع الهدية اليومية إلى 250 نقطة بدلًا من 50.</p>
-      </div>
-      <div class="shop-card rare">
-        <span class="badge-rare">نادرة الظهور</span>
-        <h3 style="color: #e8d5a0;">Soul Weaver</h3>
-        <div class="price">20,000 <span>Sib</span></div>
-        <p style="font-size: 0.9rem; color: #7a708f;">ترفع الهدية اليومية إلى 400 نقطة بدلًا من 50.</p>
-      </div>
+    </div>
+  </section>
+
+  <section id="feedback">
+    <span class="section-label">آراء المبدعين</span>
+    <h2 class="section-title">قسم التعليقات</h2>
+    
+    <div class="comments-container">
+        <div class="comment-input-wrap">
+            <textarea placeholder="اكتب رأيك أو استفسارك هنا..."></textarea>
+            <button class="btn-comment">نشر التعليق</button>
+        </div>
+
+        <div class="comments-list">
+            <div class="comment-item">
+                <div class="comment-avatar">🎨</div>
+                <div class="comment-content">
+                    <span class="user-name">رسام طموح</span>
+                    <p class="text">التصميم فنان والأسعار معقولة جداً! متحمس أجمع نقاط للـ Mythic.</p>
+                </div>
+            </div>
+            <div class="comment-item">
+                <div class="comment-avatar">💎</div>
+                <div class="comment-content">
+                    <span class="user-name">عضو فضي</span>
+                    <p class="text">سؤال: رتبة Void Painter تطلع في أيام معينة ولا عشوائي؟</p>
+                </div>
+            </div>
+        </div>
     </div>
   </section>
 
   <footer>
     <div style="font-weight: 900; color: #fcd34d; font-size: 1.5rem; margin-bottom: 10px;">🪙 Sib Coins</div>
-    <p style="font-size: 0.85rem; color: #3d3555;">Sib Coins © Art Heaven • تم تحديث النظام بالكامل</p>
+    <p style="font-size: 0.85rem; color: #3d3555;">Sib Coins © Art Heaven</p>
   </footer>
 
 </body>
