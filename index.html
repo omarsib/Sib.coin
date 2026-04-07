@@ -442,27 +442,111 @@
     filter: blur(80px);
     pointer-events: none;
   }
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .sc-root {
+    font-family: 'Cairo', 'Segoe UI', sans-serif;
+    background: #080612;
+    color: #f1f1f1;
+    direction: rtl;
+    overflow-x: hidden;
+  }
+
+  /* ضبط المسافات للأقسام لتكون مرنة */
+  section { 
+    padding: clamp(40px, 8vw, 80px) 20px; /* تقليل الحشو على الشاشات الصغيرة */
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: radial-gradient(ellipse at 50% 0%, #2a1a50 0%, #0f0820 50%, #080612 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .coin-wrap {
+    position: relative;
+    width: clamp(120px, 30vw, 180px); /* حجم العملة يتغير حسب الشاشة */
+    height: clamp(120px, 30vw, 180px);
+    margin: 0 auto 30px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 12vw, 5.5rem);
+    font-weight: 900;
+    background: linear-gradient(135deg, #fde68a, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+
+  /* تضيق الوصف ليظهر بشكل أفضل على الجوال */
+  .hero-desc {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    color: #a094b8;
+    max-width: 400px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+  }
+
+  /* ضبط عرض البطاقات */
+  .earn-grid, .shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  /* تحسين عرض البطاقة على الجوال */
+  .earn-card, .shop-card {
+    padding: clamp(25px, 5vw, 40px) 20px;
+  }
+
+  .about-box {
+    background: linear-gradient(135deg, #12102060, #1a1430);
+    border: 1px solid #2e2050;
+    border-radius: 24px;
+    padding: clamp(30px, 6vw, 48px) 20px;
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  /* العناوين */
+  .section-title {
+    font-size: clamp(1.6rem, 6vw, 2.8rem);
+    margin-bottom: 12px;
+  }
+
+  .section-desc {
+    margin-bottom: clamp(30px, 8vw, 56px);
+  }
+
+  /* تحسين الأوامر للجوال */
+  .cmd-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); /* صف واحد على الجوال */
+    gap: 12px;
+  }
+
+  @media (min-width: 768px) {
+    .cmd-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  }
+
+  /* إضافات تقنية */
+  .max-w { max-width: 1100px; margin: 0 auto; }
 </style>
-
-<div class="sc-root">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-stars"></div>
-    <div class="hero-glow"></div>
-    <div class="orb" style="width:300px;height:300px;background:rgba(139,92,246,0.08);top:40%;left:-80px;"></div>
-    <div class="orb" style="width:200px;height:200px;background:rgba(245,158,11,0.06);top:20%;right:-60px;"></div>
-    <div style="position:relative;z-index:1;">
-      <div class="coin-wrap">
-        <div class="coin-ring"></div>
-        <div class="coin-inner">🪙</div>
-      </div>
-      <h1 class="hero-title">Sib Coins</h1>
-      <p class="hero-sub">عملة Art Heaven الرسمية</p>
-      <p class="hero-desc">نظام اقتصادي فاخر يمنح قيمة حقيقية لإبداعك وجهدك داخل السيرفر</p>
-      <a href="#how-to-earn" class="btn-primary">كيف تحصل على العملة؟</a>
-    </div>
-  </section>
+١
 
   <!-- ABOUT -->
   <section class="about-sec">
