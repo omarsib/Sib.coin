@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,22 +14,21 @@
         }
 
         body {
-            font-family: 'Cairo', 'Segoe UI', sans-serif;
+            font-family: 'Cairo', sans-serif;
             background: #080612;
             color: #f1f1f1;
-            direction: rtl;
             overflow-x: hidden;
             line-height: 1.6;
         }
 
-        /* تحسين المسافات العامة للأقسام */
+        /* المسافات المتجاوبة */
         section { 
-            padding: clamp(40px, 8vw, 80px) 20px; 
-            max-width: 1100px;
+            padding: clamp(50px, 10vw, 100px) 20px; 
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* HERO SECTION */
+        /* --- HERO SECTION --- */
         .hero {
             min-height: 100vh;
             background: radial-gradient(ellipse at 50% 0%, #2a1a50 0%, #0f0820 50%, #080612 100%);
@@ -37,7 +36,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 24px;
             position: relative;
         }
 
@@ -45,15 +44,14 @@
             position: absolute; inset: 0;
             background-image: 
                 radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.6) 0%, transparent 100%),
-                radial-gradient(1.5px 1.5px at 40% 10%, rgba(255,255,255,0.8) 0%, transparent 100%),
-                radial-gradient(1px 1px at 85% 15%, rgba(255,255,255,0.7) 0%, transparent 100%);
+                radial-gradient(1.5px 1.5px at 40% 10%, rgba(255,255,255,0.8) 0%, transparent 100%);
             pointer-events: none;
         }
 
         .coin-wrap {
             position: relative;
-            width: clamp(120px, 30vw, 180px);
-            height: clamp(120px, 30vw, 180px);
+            width: clamp(140px, 35vw, 200px);
+            height: clamp(140px, 35vw, 200px);
             margin: 0 auto 30px;
         }
 
@@ -82,17 +80,17 @@
         }
 
         .hero-title {
-            font-size: clamp(2.5rem, 12vw, 5.5rem);
+            font-size: clamp(2.8rem, 12vw, 5.5rem);
             font-weight: 900;
             background: linear-gradient(135deg, #fde68a, #fbbf24, #f59e0b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1.1;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .hero-sub {
-            font-size: clamp(1.1rem, 4vw, 1.5rem);
+            font-size: clamp(1.1rem, 4vw, 1.6rem);
             color: #d4b483;
             font-weight: 700;
             margin-bottom: 15px;
@@ -101,7 +99,7 @@
         .hero-desc {
             font-size: clamp(0.9rem, 3vw, 1.1rem);
             color: #a094b8;
-            max-width: 450px;
+            max-width: 500px;
             margin: 0 auto 35px;
         }
 
@@ -114,42 +112,42 @@
             text-decoration: none;
             font-weight: 700;
             box-shadow: 0 8px 25px rgba(245,158,11,0.3);
-            transition: transform 0.2s;
+            transition: 0.3s;
         }
 
-        .btn-primary:hover { transform: translateY(-3px); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(245,158,11,0.5); }
 
-        .section-label { color: #b07b20; letter-spacing: 3px; font-size: 0.75rem; font-weight: 700; margin-bottom: 10px; display: block; text-align: center; text-transform: uppercase; }
-        .section-title { font-size: clamp(1.6rem, 6vw, 2.8rem); color: #fcd34d; text-align: center; margin-bottom: clamp(30px, 8vw, 56px); font-weight: 900; }
+        /* --- SECTIONS COMMON --- */
+        .section-label { color: #b07b20; letter-spacing: 3px; font-size: 0.8rem; font-weight: 700; margin-bottom: 10px; display: block; text-align: center; text-transform: uppercase; }
+        .section-title { font-size: clamp(1.8rem, 7vw, 2.8rem); color: #fcd34d; text-align: center; margin-bottom: 50px; font-weight: 900; }
 
-        /* ABOUT BOX */
         .about-box {
-            background: linear-gradient(135deg, #12102060, #1a1430);
+            background: #121020;
             border: 1px solid #2e2050;
-            padding: clamp(30px, 6vw, 48px) 20px;
-            border-radius: 25px;
+            padding: clamp(30px, 8vw, 60px);
+            border-radius: 30px;
             text-align: center;
-            max-width: 680px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        /* GRIDS */
-        .grid-3 {
+        /* --- GRIDS --- */
+        .grid-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         .card {
             background: #0e0c1a;
             border: 1px solid #1e1a30;
-            padding: clamp(25px, 5vw, 40px) 20px;
-            border-radius: 20px;
-            transition: 0.3s;
+            padding: 35px 25px;
+            border-radius: 24px;
             text-align: center;
+            transition: 0.3s;
         }
 
-        .card:hover { transform: translateY(-5px); border-color: #fcd34d40; }
+        .card:hover { transform: translateY(-8px); border-color: #fcd34d60; }
 
         .cmd-grid {
             display: grid;
@@ -160,33 +158,32 @@
         .cmd-item {
             background: #0e0c1a;
             padding: 20px;
-            border-radius: 15px;
+            border-radius: 18px;
             display: flex;
             align-items: center;
             gap: 15px;
             border: 1px solid #1e1a30;
         }
 
-        .cmd-code { font-family: monospace; color: #fcd34d; font-weight: 700; font-size: 0.95rem; }
+        .cmd-code { font-family: monospace; color: #fcd34d; font-weight: 700; font-size: 1rem; }
 
-        .shop-card.featured {
-            border: 2px solid #f59e0b;
-            background: linear-gradient(160deg, #120e22, #1a1530);
-            transform: scale(1.04);
+        /* --- SHOP SPECIFIC --- */
+        .shop-card.mythic { border: 2px solid #ef4444; background: linear-gradient(160deg, #120e22, #250a0a); }
+        .shop-card.legendary { border: 2px solid #a855f7; background: linear-gradient(160deg, #120e22, #1a0a25); }
+        
+        .badge-perm { 
+            background: #000; color: #fcd34d; padding: 4px 12px; border-radius: 50px; 
+            font-size: 0.7rem; font-weight: 900; border: 1px solid #fcd34d40; margin-bottom: 15px; display: inline-block;
         }
 
-        .price { font-size: 2.5rem; color: #4ade80; font-weight: 900; margin: 15px 0; }
+        .price { font-size: 2.6rem; color: #4ade80; font-weight: 900; margin: 15px 0; }
         .price span { font-size: 1rem; color: #4a9c6a; }
 
         footer {
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
             background: #040309;
             border-top: 1px solid #1e1a30;
-        }
-
-        @media (max-width: 480px) {
-            .shop-card.featured { transform: scale(1); margin: 10px 0; }
         }
     </style>
 </head>
@@ -201,109 +198,79 @@
             </div>
             <h1 class="hero-title">Sib Coins</h1>
             <p class="hero-sub">عملة Art Heaven الرسمية</p>
-            <p class="hero-desc">نظام اقتصادي متكامل يمنح قيمة حقيقية لتفاعلك وإبداعك داخل مجتمعنا.</p>
-            <a href="#about" class="btn-primary">اكتشف السيرفر</a>
+            <p class="hero-desc">نظام اقتصادي فني متكامل لتقدير إبداعك وتفاعلك داخل السيرفر.</p>
+            <a href="#shop" class="btn-primary">استعرض المتجر الجديد</a>
         </div>
     </section>
 
     <section id="about" style="background: #0c0918;">
-        <span class="section-label">من نحن</span>
+        <span class="section-label">المجتمع</span>
         <h2 class="section-title">حول Art Heaven</h2>
         <div class="about-box">
-            <p style="margin-bottom: 25px; color: #9d90b8; font-size: 1.05rem;">نحن أكبر تجمع عربي للمبدعين والرسامين على ديسكورد. نسعى لتوفير بيئة ملهمة تجمع بين الفن والتقنية، حيث يمكنك مشاركة أعمالك وتطوير مهاراتك.</p>
-            <a href="https://discord.gg/cxccGZY9U5" target="_blank" style="background: #5865F2; color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);">انضم إلى السيرفر الآن</a>
+            <p style="margin-bottom: 30px; color: #9d90b8; font-size: 1.1rem;">نحن أكبر تجمع عربي للمبدعين والرسامين على ديسكورد. بيئة ملهمة تجمع بين الفن والتقنية، حيث يمكنك مشاركة أعمالك وتطوير مهاراتك مع نخبة من الفنانين.</p>
+            <a href="https://discord.gg/cxccGZY9U5" target="_blank" style="background: #5865F2; color: white; padding: 14px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);">انضم إلى السيرفر الآن</a>
         </div>
     </section>
 
     <section id="commands" style="background: #0a0916;">
-        <span class="section-label">دليل المستخدم</span>
-        <h2 class="section-title">أوامر البوت البرمجية</h2>
+        <span class="section-label">التحكم</span>
+        <h2 class="section-title">أوامر البوت المحدثة</h2>
         <div class="cmd-grid">
-            <div class="cmd-item">
-                <span style="font-size: 1.8rem;">💰</span>
-                <div>
-                    <div class="cmd-code">!نقاطي</div>
-                    <div style="font-size: 0.82rem; color: #6b6382;">لمعرفة رصيدك الحالي</div>
-                </div>
-            </div>
-            <div class="cmd-item">
-                <span style="font-size: 1.8rem;">🎁</span>
-                <div>
-                    <div class="cmd-code">!هدية</div>
-                    <div style="font-size: 0.82rem; color: #6b6382;">لاستلام المكافأة اليومية</div>
-                </div>
-            </div>
-            <div class="cmd-item">
-                <span style="font-size: 1.8rem;">💸</span>
-                <div>
-                    <div class="cmd-code">!تحويل @الشخص المبلغ</div>
-                    <div style="font-size: 0.82rem; color: #6b6382;">لتحويل العملات لأعضاء آخرين</div>
-                </div>
-            </div>
-            <div class="cmd-item">
-                <span style="font-size: 1.8rem;">🆔</span>
-                <div>
-                    <div class="cmd-code">!id</div>
-                    <div style="font-size: 0.82rem; color: #6b6382;">عرض هويتك ومعلوماتك</div>
-                </div>
-            </div>
-            <div class="cmd-item">
-                <span style="font-size: 1.8rem;">🎒</span>
-                <div>
-                    <div class="cmd-code">!bag</div>
-                    <div style="font-size: 0.82rem; color: #6b6382;">حقيبتك (الشظايا والممتلكات)</div>
-                </div>
-            </div>
-            <div class="cmd-item">
-                <span style="font-size: 1.8rem;">🛒</span>
-                <div>
-                    <div class="cmd-code">!السوق</div>
-                    <div style="font-size: 0.82rem; color: #6b6382;">سوق بيع وشراء الشظايا</div>
-                </div>
-            </div>
-            <div class="cmd-item">
-                <span style="font-size: 1.8rem;">💎</span>
-                <div>
-                    <div class="cmd-code">!بيع_شظية [العدد] [السعر]</div>
-                    <div style="font-size: 0.82rem; color: #6b6382;">عرض شظاياك للبيع بالسعر الذي تريده</div>
-                </div>
-            </div>
-            <div class="cmd-item">
-                <span style="font-size: 1.8rem;">🏆</span>
-                <div>
-                    <div class="cmd-code">!توب</div>
-                    <div style="font-size: 0.82rem; color: #6b6382;">قائمة أغنى الفنانين في السيرفر</div>
-                </div>
-            </div>
+            <div class="cmd-item"><span>💰</span><div><div class="cmd-code">!نقاطي</div><div style="font-size: 0.8rem; color: #6b6382;">لمعرفة رصيدك الحالي</div></div></div>
+            <div class="cmd-item"><span>🎁</span><div><div class="cmd-code">!هدية</div><div style="font-size: 0.8rem; color: #6b6382;">استلام المكافأة اليومية</div></div></div>
+            <div class="cmd-item"><span>💸</span><div><div class="cmd-code">!تحويل @اسم المبلغ</div><div style="font-size: 0.8rem; color: #6b6382;">تحويل العملات للأصدقاء</div></div></div>
+            <div class="cmd-item"><span>🆔</span><div><div class="cmd-code">!id</div><div style="font-size: 0.8rem; color: #6b6382;">عرض هويتك ومعلوماتك</div></div></div>
+            <div class="cmd-item"><span>🎒</span><div><div class="cmd-code">!bag</div><div style="font-size: 0.8rem; color: #6b6382;">حقيبة الممتلكات والشظايا</div></div></div>
+            <div class="cmd-item"><span>🛒</span><div><div class="cmd-code">!السوق</div><div style="font-size: 0.8rem; color: #6b6382;">سوق بيع وشراء الشظايا</div></div></div>
+            <div class="cmd-item"><span>💎</span><div><div class="cmd-code">!بيع_شظية [العدد] [السعر]</div><div style="font-size: 0.8rem; color: #6b6382;">بيع شظاياك بالسعر الذي تحدده</div></div></div>
+            <div class="cmd-item"><span>🏆</span><div><div class="cmd-code">!توب</div><div style="font-size: 0.8rem; color: #6b6382;">قائمة أغنى الفنانين بالسيرفر</div></div></div>
         </div>
     </section>
 
     <section id="shop">
-        <span class="section-label">المتجر</span>
-        <h2 class="section-title">الرتب النادرة</h2>
-        <div class="grid-3">
-            <div class="card shop-card">
-                <h4 style="color: #e8d5a0;">Void Painter</h4>
-                <div class="price">10k <span>Sib</span></div>
-                <p style="font-size: 0.85rem; color: #7a708f;">ترفع الهدية اليومية إلى 150 نقطة</p>
+        <span class="section-label">المتجر الحصري</span>
+        <h2 class="section-title">متجر رتب النخبة</h2>
+        
+        <p style="text-align: center; color: #a855f7; margin-bottom: 25px; font-weight: 700; letter-spacing: 1px;">⬥ رتب أزلية (دائمة الوجود) ⬥</p>
+        <div class="grid-layout" style="margin-bottom: 60px;">
+            <div class="card shop-card mythic">
+                <span class="badge-perm">رتبة أسطورية (Mythic)</span>
+                <h3 style="color: #ef4444; font-size: 1.5rem;">Mythic Artist</h3>
+                <div class="price">100k <span>Sib</span></div>
+                <p style="font-size: 0.9rem; color: #b8a6a6;">أعلى رتبة فنية: لون أحمر متوهج + هدية يومية قصوى + ميزات حصرية جداً.</p>
             </div>
-            <div class="card shop-card featured">
-                <div style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #1c1100; font-size: 0.7rem; font-weight: 900; padding: 4px 15px; border-radius: 50px; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); white-space: nowrap;">الأكثر طلباً ⭐</div>
-                <h4 style="color: #fcd34d;">Celestial Artist</h4>
-                <div class="price">15k <span>Sib</span></div>
-                <p style="font-size: 0.85rem; color: #7a708f;">ترفع الهدية اليومية إلى 250 نقطة</p>
-            </div>
-            <div class="card shop-card">
-                <h4 style="color: #e8d5a0;">Soul Weaver</h4>
-                <div class="price">20k <span>Sib</span></div>
-                <p style="font-size: 0.85rem; color: #7a708f;">ترفع الهدية اليومية إلى 400 نقطة</p>
+            <div class="card shop-card legendary">
+                <span class="badge-perm">رتبة خالدة (Legendary)</span>
+                <h3 style="color: #a855f7; font-size: 1.5rem;">Legendary Creator</h3>
+                <div class="price">75k <span>Sib</span></div>
+                <p style="font-size: 0.9rem; color: #a698b8;">مقام المبدعين الخالدين: لون بنفسجي + مضاعفة نقاط التفاعل تلقائياً.</p>
             </div>
         </div>
+
+        <p style="text-align: center; color: #f59e0b; margin-bottom: 25px; font-weight: 700; letter-spacing: 1px;">⬥ رتب دورية (تظهر بشكل عشوائي) ⬥</p>
+        <div class="grid-layout">
+            <div class="card">
+                <h4 style="color: #e8d5a0; font-size: 1.3rem;">Void Painter</h4>
+                <div class="price">10k <span>Sib</span></div>
+                <p style="font-size: 0.85rem; color: #7a708f;">تطوير الهدية اليومية إلى 150 نقطة.</p>
+            </div>
+            <div class="card" style="border: 2px dashed #f59e0b;">
+                <h4 style="color: #fcd34d; font-size: 1.3rem;">Celestial Artist</h4>
+                <div class="price">15k <span>Sib</span></div>
+                <p style="font-size: 0.85rem; color: #7a708f;">تطوير الهدية اليومية إلى 250 نقطة.</p>
+            </div>
+            <div class="card">
+                <h4 style="color: #e8d5a0; font-size: 1.3rem;">Soul Weaver</h4>
+                <div class="price">20k <span>Sib</span></div>
+                <p style="font-size: 0.85rem; color: #7a708f;">تطوير الهدية اليومية إلى 400 نقطة.</p>
+            </div>
+        </div>
+        <p style="text-align: center; font-size: 0.85rem; color: #444; margin-top: 30px;">* ملاحظة: الرتب في القسم السفلي تتغير دورياً في متجر البوت.</p>
     </section>
 
     <footer>
-        <div style="font-weight: 900; color: #fcd34d; font-size: 1.2rem; margin-bottom: 8px;">🪙 Sib Coins</div>
-        <div style="font-size: 0.8rem; color: #3d3555;">Sib Coins © Art Heaven • تم تحديث نظام السوق والتحويل</div>
+        <div style="font-weight: 900; color: #fcd34d; font-size: 1.3rem; margin-bottom: 10px;">🪙 Sib Coins</div>
+        <div style="font-size: 0.85rem; color: #3d3555;">Sib Coins © Art Heaven • تم تحديث النظام بالكامل</div>
     </footer>
 
 </body>
